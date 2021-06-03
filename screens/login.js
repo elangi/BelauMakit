@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, KeyboardAvoidingView, Modal, Pressable, TouchableOpacity, Text, View } from 'react-native';
+import { StyleSheet, KeyboardAvoidingView, Modal, Pressable, TouchableOpacity, Text, View, Alert } from 'react-native';
 import { Roboto_400Regular, Roboto_900Black, Roboto_700Bold } from '@expo-google-fonts/roboto'
 import { RobotoSlab_400Regular } from '@expo-google-fonts/roboto-slab';
 import { useFonts, MarkaziText_400Regular, MarkaziText_600SemiBold, MarkaziText_700Bold } from '@expo-google-fonts/markazi-text';

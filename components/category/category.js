@@ -1,6 +1,7 @@
 import React from 'react';
-import {View, TextInput, StyleSheet} from 'react-native';
+import {View, TextInput, StyleSheet, ScrollView, TouchableOpacity, Image, Text} from 'react-native';
 import {windowHeight, windowWidth} from '../Dimension/Dimension';
+
 
 import Bento from '../../assets/bento.png';
 import Breakfast from '../../assets/breakfast.png';
@@ -10,6 +11,18 @@ import Odoim from '../../assets/thanksgiving.png';
 import Ongraol from '../../assets/sweetpotato.png';
 import Yasai from '../../assets/spinach.png';
 import Fruits from '../../assets/bananas.png';
+
+import {
+  useFonts,
+  MarkaziText_400Regular,
+  MarkaziText_500Medium,
+  MarkaziText_600SemiBold,
+  MarkaziText_700Bold,
+} from '@expo-google-fonts/markazi-text';
+
+import {
+  RobotoSlab_400Regular
+} from '@expo-google-fonts/roboto';
 
 const Category = ({navigation}) => {
     let [fontsLoaded] = useFonts({
