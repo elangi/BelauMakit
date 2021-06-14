@@ -1,30 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, KeyboardAvoidingView, Modal, Pressable, TouchableOpacity, Text, View, Alert } from 'react-native';
-import { Roboto_400Regular, Roboto_900Black, Roboto_700Bold } from '@expo-google-fonts/roboto'
-import { RobotoSlab_400Regular } from '@expo-google-fonts/roboto-slab';
-import { useFonts, MarkaziText_400Regular, MarkaziText_600SemiBold, MarkaziText_700Bold } from '@expo-google-fonts/markazi-text';
+import { StyleSheet, Modal, Pressable, TouchableOpacity, Text, View, Alert } from 'react-native';
 
-import FormInput from '../components/FormInput/FormInput';
+import FormInput from '../components/FormInput';
 import FormInput1 from '../components/FormInput1';
-import FormButton from '../components/FormButton/FormButton';
+import FormButton from '../components/FormButton';
 
 const LoginScreen = ({onLogin, navigation}) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [forgetPassword, setForgetPassword] = useState("");
     const [modalVisible, setModalVisible] = useState(false);
-    let [fontsLoaded] = useFonts({
-        Roboto_400Regular,
-        Roboto_700Bold,
-        Roboto_900Black,
-        RobotoSlab_400Regular,
-        MarkaziText_400Regular,
-        MarkaziText_600SemiBold,
-        MarkaziText_700Bold,
-    }); if (!fontsLoaded) {
-        return <View><Text>Not loaded</Text></View>;
-    } else 
+    
     return(
             <View style={styles.container}>
                 <StatusBar style='auto'/>

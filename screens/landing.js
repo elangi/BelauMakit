@@ -1,21 +1,12 @@
 import React from 'react';
-import { Button, Image, View, Text, StyleSheet } from 'react-native';
+import { Image, View, Text, StyleSheet } from 'react-native';
 import Landing from '../assets/TL.png';
-import { useFonts, Amita_700Bold } from '@expo-google-fonts/amita';
-import { MarkaziText_600SemiBold } from '@expo-google-fonts/markazi-text';
 
 
-import FormButton from '../components/FormButton/FormButton';
+import FormButton from '../components/FormButton';
 import FormButton1 from '../components/FormButton1';
-import { color } from 'react-native-reanimated';
 
 const Landingscreen = ({navigation}) => {
-    let [fontsLoaded] = useFonts({
-        Amita_700Bold,
-        MarkaziText_600SemiBold
-    }); if (!fontsLoaded) {
-        return <View><Text>Not loaded</Text></View>;
-    } else 
     return (
         <View style={styles.container}>
             <View style={styles.bgcontainer}>

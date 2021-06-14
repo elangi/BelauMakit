@@ -9,12 +9,12 @@ const styles = StyleSheet.create({
     },
 });
 
-const ResetScreen = () => {
+const CheckoutScreen = () => {
     return(
         <View style={styles.container}>
-            <Text>Forgot me password, lemme reset it rq</Text>
+            <Text>This is my checkout and I shall buy whatever I want to buy boiiii</Text>
         </View>
     );
 };
 
-export default ResetScreen;
+export default CheckoutScreen;

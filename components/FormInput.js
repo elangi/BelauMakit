@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, TextInput, StyleSheet} from 'react-native';
-import {windowHeight, windowWidth} from '../Dimension/Dimension';
+import {windowHeight, windowWidth} from './Dimension';
 
 import AntDesign from 'react-native-vector-icons/AntDesign';
 

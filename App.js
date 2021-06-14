@@ -5,8 +5,13 @@ import { NavigationContainer, getFocusedRouteNameFromRoute, DrawerActions } from
 import { createStackNavigator} from '@react-navigation/stack';
 import { createDrawerNavigator} from '@react-navigation/drawer';
 import { AntDesign, Entypo, Ionicons, FontAwesome, Feather, FontAwesome5 } from '@expo/vector-icons';
+import { Amita_700Bold } from '@expo-google-fonts/amita';
+import { Roboto_400Regular, Roboto_900Black, Roboto_700Bold } from '@expo-google-fonts/roboto'
+import { RobotoSlab_400Regular } from '@expo-google-fonts/roboto-slab';
+import { useFonts, MarkaziText_400Regular, MarkaziText_600SemiBold, MarkaziText_700Bold } from '@expo-google-fonts/markazi-text';
 // import * as Font from 'expo-font';
 import AppLoading from 'expo-app-loading';
+import { enableScreens } from 'react-native-screens';
 
 import LandingScreen from './screens/landing';
 import HomeScreen from './screens/home';
@@ -14,9 +19,9 @@ import LoginScreen from './screens/login';
 import SignupScreen from './screens/signup';
 import ProductScreen from './screens/product';
 import OrdersScreen from './screens/orders';
-import MoreScreen from './screens/more';
 import LogoutScreen from './screens/logout';
 import MapScreen from './screens/map';
+import LegalScreen from './screens/legal';
 
 // const fetchFonts = () => {
 //   return Font.loadAsync({
@@ -24,6 +29,8 @@ import MapScreen from './screens/map';
 //     'Markazi': require('./assets/MarkaziText-SemiBold.ttf')
 //   });
 // };
+
+enableScreens();
 
 const Drawer = createDrawerNavigator();
 const HomeDrawer = () => {
@@ -49,7 +56,7 @@ const HomeDrawer = () => {
           <Ionicons name="ios-receipt-outline" size={25} color={focused ? '#7cc' : '#E88832'}/>
         )
       }}/>
-      <Drawer.Screen name = "Settings" component={MoreScreen} options= {{
+      <Drawer.Screen name = "Settings" component={LegalScreen} options= {{
         title: 'Settings',
         drawerIcon: ({focused}) => (
           <Ionicons name="settings-outline" size={25} color={focused ? '#7cc' : '#E88832'}/>
@@ -87,6 +94,20 @@ const Navigation = () => {
   //       onError={(err) => console.log(err)}/>
   //   )
   // }
+
+  let [fontsLoaded] = useFonts({
+    Amita_700Bold,
+    Roboto_400Regular,
+    Roboto_700Bold,
+    Roboto_900Black,
+    RobotoSlab_400Regular,
+    MarkaziText_400Regular,
+    MarkaziText_600SemiBold,
+    MarkaziText_700Bold,
+  }); 
+  if (!fontsLoaded) {
+    return <AppLoading/>;
+  } else 
 
   return(
     <NavigationContainer>

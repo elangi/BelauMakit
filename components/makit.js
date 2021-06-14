@@ -12,7 +12,7 @@ import Makit1 from '../assets/R1.png';
 import Makit2 from '../assets/R2.png';
 import Makit3 from '../assets/R3.png';
 import Makit4 from '../assets/R4.png';
-import { windowWidth } from './Dimension/Dimension';
+import { windowWidth } from './Dimension';
 
 const HomeScreen = ({ navigation }) => {
   let [fontsLoaded] = useFonts({

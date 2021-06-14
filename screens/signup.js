@@ -1,7 +1,7 @@
 import React, { Component, useContext, useState } from 'react';
 import { StyleSheet, ScrollView , Modal, Pressable, Text, View, Alert } from 'react-native';
-import FormInput from '../components/FormInput/FormInput';
-import FormButton from '../components/FormButton/FormButton';
+import FormInput from '../components/FormInput';
+import FormButton from '../components/FormButton';
 
 const SignupScreen = ({onSignup}) => {
     const [fullname, setFullname] = useState("");

@@ -9,20 +9,6 @@ import {
   StyleSheet,
   FlatList,
 } from 'react-native';
-import { RobotoSlab_400Regular } from '@expo-google-fonts/roboto-slab';
-import {
-  useFonts,
-  MarkaziText_400Regular,
-  MarkaziText_600SemiBold,
-  MarkaziText_700Bold,
-} from '@expo-google-fonts/markazi-text';
-import {
-  AntDesign,
-  Entypo,
-  Ionicons,
-  Feather,
-  FontAwesome5,
-} from '@expo/vector-icons';
 
 import FormInput2 from '../components/FormInput2';
 
@@ -38,7 +24,7 @@ import Makit1 from '../assets/R1.png';
 import Makit2 from '../assets/R2.png';
 import Makit3 from '../assets/R3.png';
 import Makit4 from '../assets/R4.png';
-import { windowWidth, windowHeight } from '../components/Dimension/Dimension';
+import { windowWidth, windowHeight } from '../components/Dimension';
 
 const HomeScreen = ({ navigation }) => {
   const [foodFilter, setFoodFilter] = useState([
@@ -255,19 +241,6 @@ const HomeScreen = ({ navigation }) => {
     },
   ]);
 
-  let [fontsLoaded] = useFonts({
-    MarkaziText_400Regular,
-    MarkaziText_600SemiBold,
-    MarkaziText_700Bold,
-    RobotoSlab_400Regular,
-  });
-  if (!fontsLoaded) {
-    return (
-      <View>
-        <Text>Not loaded</Text>
-      </View>
-    );
-  } else
     return (
       <View style={styles.container}>
         <ScrollView showsVerticalScrollIndicator={false}>

@@ -1,5 +1,9 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, FlatList } from 'react-native';
+import { baseProps } from 'react-native-gesture-handler/lib/typescript/handlers/gestureHandlers';
+
+import CategoryMenu from '../components/category-menu';
+import { CATEGORIES } from '../data/dummy-data';
 
 const styles = StyleSheet.create({
     container: {
@@ -9,12 +13,42 @@ const styles = StyleSheet.create({
     },
 });
 
-const OrdersScreen = () => {
+const OrdersScreen = props => {
+    const renderGrid = (itemData) => {
+        return(
+            <CategoryMenu 
+                title={itemData.item.title}
+                onSelect={() => {
+                    props.navigation.navigate({
+                        routeName: 'Home',
+                        params: {
+                            categoryId: itemData.item.id
+                        }
+                    });
+                }}
+            />
+        );
+    };
     return(
-        <View style={styles.container}>
-            <Text>Order here or something like that, idrk honestly</Text>
-        </View>
+        <FlatList data={CATEGORIES} renderItem={renderGrid} numColumn={8} contentContainerStyle={styles.full}/>
     );
 };
+
+OrdersScreen.navigationOptions = {
+    headerTitle: 'Test test test',
+    headerStyle: {
+        backgroundColor: '#e8debd'
+    },
+    headerTintStyle: '#ccc'
+};
+
+const styles = StyleSheet.create({
+    full: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
+    }
+})
+
 
 export default OrdersScreen;
