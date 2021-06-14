@@ -1,15 +1,7 @@
 import React from 'react';
 import {View, StyleSheet, TouchableOpacity, Text, Platform, TouchableNativeFeedback} from 'react-native';
 import {windowHeight, windowWidth} from './Dimension';
-
-import Bento from '../../assets/bento.png';
-import Breakfast from '../../assets/breakfast.png';
-import Drink from '../../assets/coconut.png';
-import Dessert from '../../assets/sweets.png';
-import Odoim from '../../assets/thanksgiving.png';
-import Ongraol from '../../assets/sweetpotato.png';
-import Yasai from '../../assets/spinach.png';
-import Fruits from '../../assets/bananas.png';
+import { CATEGORIES } from '../data/dummy-data';
 
 const Category = props => {
     let TouchableComp = TouchableOpacity;

@@ -1,17 +1,8 @@
 import React from 'react';
 import { View, Text, StyleSheet, FlatList } from 'react-native';
-import { baseProps } from 'react-native-gesture-handler/lib/typescript/handlers/gestureHandlers';
 
 import CategoryMenu from '../components/category-menu';
 import { CATEGORIES } from '../data/dummy-data';
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});
 
 const OrdersScreen = props => {
     const renderGrid = (itemData) => {
