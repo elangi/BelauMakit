@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { Text, View, TouchableOpacity, StyleSheet } from 'react-native';
 import { windowHeight, windowWidth } from './Dimension';
 
 const FormButton = ({buttonTitle, ...rest}) => {
@@ -10,22 +10,23 @@ const FormButton = ({buttonTitle, ...rest}) => {
     );
 };
 
-export default FormButton;
-
 const styles = StyleSheet.create({
     buttonContainer: {
-        marginTop: 10,
+        marginTop: 15,
         width: '90%',
         height: windowHeight / 15,
         backgroundColor: '#FFB400',
         padding: 10,
         alignItems: 'center',
         justifyContent: 'center',
-        borderRadius: 3
+        borderRadius: 3,
     },
     buttonText: {
         fontSize: 18,
         fontWeight: 'bold',
+        textAlign: 'center',
         color: '#fff'
     }
 });
+
+export default FormButton;
