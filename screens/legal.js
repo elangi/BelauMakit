@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     },
 });
 
-const LegalScreen = () => {
+const Legal = () => {
     return(
         <View style={styles.container}>
             <Text>By using this application, you agree that PNCC is not responsible for the inaccuracy and inappropriateness of the information or material contained on any web sites viewed on or downloaded from the Internet using PNCC service.
@@ -20,4 +20,4 @@ const LegalScreen = () => {
     );
 };
 
-export default LegalScreen;
+export default Legal;

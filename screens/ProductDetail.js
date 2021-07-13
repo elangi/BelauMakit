@@ -9,12 +9,12 @@ const styles = StyleSheet.create({
     },
 });
 
-const Logout = () => {
+const ProductDetail = () => {
     return(
         <View style={styles.container}>
-            <Text>This is my logout screen about what? I too don't know ay</Text>
+            <Text>All these products and you still looking for other things? Bro.</Text>
         </View>
     );
 };
 
-export default Logout;
+export default ProductDetail;

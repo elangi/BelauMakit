@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     },
 });
 
-const HelpScreen = () => {
+const Help = () => {
     return(
         <View style={styles.container}>
             <Text>I help you you help me we are one big family or whatever barney said</Text>
@@ -17,4 +17,4 @@ const HelpScreen = () => {
     );
 };
 
-export default HelpScreen;
+export default Help;

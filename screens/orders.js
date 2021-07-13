@@ -1,13 +1,13 @@
 import React from 'react';
 import { View, Text, StyleSheet, FlatList } from 'react-native';
 
-import CategoryMenu from '../components/category-menu';
+import CategoryList from '../components/category-list';
 import { CATEGORIES } from '../data/dummy-data';
 
-const OrdersScreen = props => {
+const Orders = props => {
     const renderGrid = (itemData) => {
         return(
-            <CategoryMenu 
+            <CategoryList 
                 title={itemData.item.title}
                 onSelect={() => {
                     props.navigation.navigate({
@@ -25,7 +25,7 @@ const OrdersScreen = props => {
     );
 };
 
-OrdersScreen.navigationOptions = {
+Orders.navigationOptions = {
     headerTitle: 'Test test test',
     headerStyle: {
         backgroundColor: '#e8debd'
@@ -42,4 +42,4 @@ const styles = StyleSheet.create({
 })
 
 
-export default OrdersScreen;
+export default Orders;

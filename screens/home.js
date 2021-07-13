@@ -11,6 +11,8 @@ import {
 } from 'react-native';
 
 import FormInput2 from '../components/FormInput2';
+import CategoryList from '../components/category-list';
+import { CATEGORIES, MAKITS, PRODUCTS } from '../data/dummy-data';
 
 import Bento from '../assets/bento.png';
 import Breakfast from '../assets/breakfast.png';
@@ -26,7 +28,7 @@ import Makit3 from '../assets/R3.png';
 import Makit4 from '../assets/R4.png';
 import { windowWidth, windowHeight } from '../components/Dimension';
 
-const HomeScreen = ({ navigation }) => {
+const Home = ({ navigation }) => {
   const [foodFilter, setFoodFilter] = useState([
     {
       name: 'Bento',
@@ -296,11 +298,34 @@ const HomeScreen = ({ navigation }) => {
         </ScrollView>
       </View>
     );
+    const renderMakit = props => {
+      return(
+        <CategoryList
+          title={itemData.item.title}
+          onSelect={() => {
+            props.navigation.navigate({
+              routeName: 'MakitDetail',
+              params: {
+                categoryId: itemData.item.id
+              }
+            });
+          }}
+        />
+      )
+    }
+    return(
+      <FlatList data={CATEGORIES} renderItem={renderMakit} numColumns={8} contentContainerStyle={styles.full}/>
+    );
 };
 
-export default HomeScreen;
+
 
 const styles = StyleSheet.create({
+  screen: {
+    flex: 1,
+    justifyContent: 'space-between',
+    alignItems: 'center'
+  },
   container: {
     backgroundColor: '#fff',
     flex: 1,
@@ -388,3 +413,5 @@ const styles = StyleSheet.create({
     marginTop: -5,
   },
 });
+
+export default Home;

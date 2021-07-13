@@ -6,7 +6,7 @@ import FormInput from '../components/FormInput';
 import FormInput1 from '../components/FormInput1';
 import FormButton from '../components/FormButton';
 
-const LoginScreen = ({onLogin, navigation}) => {
+const LoginMakit = ({onLogin, navigation}) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [forgetPassword, setForgetPassword] = useState("");
@@ -15,8 +15,15 @@ const LoginScreen = ({onLogin, navigation}) => {
     return(
             <View style={styles.container}>
                 <StatusBar style='auto'/>
+                <View style={styles.changeLogin}>
+                    <FormButton
+                        buttonTitle="Log in as Customer"
+                        onPress={()=>{}}
+                    />
+                </View>
+                <View style={styles.everythingElse}>
                 <View style={styles.title}>
-                    <Text style={styles.titletext}>Log in</Text>
+                    <Text style={styles.titletext}>Log in as Makit</Text>
                 </View>
                 <View style={styles.centerContainer}>
                     <FormInput
@@ -48,7 +55,7 @@ const LoginScreen = ({onLogin, navigation}) => {
                         }}>
                         <View style={styles.centeredView}>
                             <View style={styles.modalView}>
-                                <Text style={styles.modalText}>Forget your password? Les change it rq. Enter your email address:</Text>
+                                <Text style={styles.modalText}>Forget your password? Les change it real quick. Enter your email address:</Text>
                                 <FormInput1
                                     labelValue={forgetPassword}
                                     onChangeText={(userForget) => setForgetPassword(userForget)}
@@ -70,8 +77,8 @@ const LoginScreen = ({onLogin, navigation}) => {
                     </Pressable>
 
                     <FormButton
-                    buttonTitle="Log In"
-                    onPress={onLogin}
+                        buttonTitle="Log In"
+                        onPress={onLogin}
                     />
 
                     
@@ -81,17 +88,28 @@ const LoginScreen = ({onLogin, navigation}) => {
                         </Text>
                     </TouchableOpacity>
                 </View>
+                </View>
             </View>
     );
 };
 
-export default LoginScreen; 
-
 const styles = StyleSheet.create({
+    changeLogin: {
+        marginLeft: 175,
+        marginTop: 30,
+        width: '50%',
+        borderRadius: 20,
+        justifyContent: 'flex-end',
+        alignItems: 'flex-end'
+    },
     container: {
         flex: 1,
-        justifyContent: 'center',
+        // justifyContent: 'center',
         backgroundColor: '#fff'
+    },
+    everythingElse: {
+        flex: 1,
+        justifyContent: 'center'
     },
     title: {
         flexDirection: 'row',
@@ -170,3 +188,5 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     }
 });
+
+export default LoginMakit; 

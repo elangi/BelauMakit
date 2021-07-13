@@ -1,8 +1,7 @@
 import React from 'react';
 import { View, Text, ImageBackground, TouchableOpacity, StyleSheet } from 'react-native';
 
-const MakitList = props => {
-  // const renderMeals = itemData => {
+const Product = props => {
   return (
     <View style={styles.makitItem}>
       <TouchableOpacity onPress={props.OnSelectMakit}>
@@ -26,12 +25,10 @@ const MakitList = props => {
 const styles = StyleSheet.create({
   makitItem: {
     height: 200,
-    width: '45%',
+    width: '100%',
     backgroundColor: '#f5f5f5',
     borderRadius: 10,
-    overflow: 'hidden',
-    justifyContent:'space-between',
-    margin: 10
+    overflow: 'hidden'
   },
   makitRow: {
     flexDirection: 'row'
@@ -63,4 +60,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default MakitList;
+export default Product;

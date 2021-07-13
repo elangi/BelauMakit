@@ -1,10 +1,11 @@
-class Product {
+class ProductModel {
     constructor(
         id, 
         categoryId, 
         title, 
         vendor, 
         vendorPermitNumber, 
+        vendorContactNumber,
         image, 
         price, 
         dateTime, 
@@ -15,6 +16,7 @@ class Product {
             this.title = title;
             this.vendor = vendor;
             this.vendorPermitNumber = vendorPermitNumber;
+            this.vendorContactNumber = vendorContactNumber;
             this.image = image;
             this.price = price;
             this.dateTime = dateTime;
@@ -23,4 +25,4 @@ class Product {
     }
 }
 
-export default Product;
+export default ProductModel;

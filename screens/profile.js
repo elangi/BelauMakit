@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     },
 });
 
-const ProfileScreen = () => {
+const Profile = () => {
     return(
         <View style={styles.container}>
             <Text>This is my screen about my profile or what why do i even have this ay</Text>
@@ -17,4 +17,4 @@ const ProfileScreen = () => {
     );
 };
 
-export default ProfileScreen;
+export default Profile;

@@ -9,19 +9,20 @@ import { Amita_700Bold } from '@expo-google-fonts/amita';
 import { Roboto_400Regular, Roboto_900Black, Roboto_700Bold } from '@expo-google-fonts/roboto'
 import { RobotoSlab_400Regular } from '@expo-google-fonts/roboto-slab';
 import { useFonts, MarkaziText_400Regular, MarkaziText_600SemiBold, MarkaziText_700Bold } from '@expo-google-fonts/markazi-text';
-// import * as Font from 'expo-font';
 import AppLoading from 'expo-app-loading';
 import { enableScreens } from 'react-native-screens';
 
-import LandingScreen from './screens/landing';
-import HomeScreen from './screens/home';
-import LoginScreen from './screens/login';
-import SignupScreen from './screens/signup';
-import ProductScreen from './screens/product';
-import OrdersScreen from './screens/orders';
-import LogoutScreen from './screens/logout';
-import MapScreen from './screens/map';
-import LegalScreen from './screens/legal';
+import Landing from './screens/Landing';
+import Home from './screens/Home';
+import Home1 from './screens/Home1';
+import LoginCustomer from './screens/LoginCustomer';
+import LoginMakit from './screens/LoginMakit';
+import Signup from './screens/Signup';
+import Product from './screens/ProductDetail';
+import Orders from './screens/Orders';
+import Logout from './screens/Logout';
+import Map from './screens/Map';
+import Legal from './screens/Legal';
 
 // const fetchFonts = () => {
 //   return Font.loadAsync({
@@ -38,31 +39,31 @@ const HomeDrawer = () => {
     <Drawer.Navigator
       initialRouteName="Belau Makit"
     >
-      <Drawer.Screen name = "Belau Makit"  component={HomeScreen}  options= {{
+      <Drawer.Screen name = "Belau Makit"  component={Home1}  options= {{
         title: 'Home',
         drawerIcon: ({focused}) => (
           <Ionicons name="ios-home-outline" size={25}  color={focused ? '#7cc' : '#E88832'}/>
         )
       }}/>
-      <Drawer.Screen name = "Map" component={MapScreen} options= {{
+      <Drawer.Screen name = "Map" component={Map} options= {{
         title: 'Map',
         drawerIcon: ({focused}) => (
           <Ionicons name="map-outline" size={25} color={focused ? '#7cc' : '#E88832'}/>
         )
       }}/>
-      <Drawer.Screen name = "Orders" component={OrdersScreen} options= {{
+      <Drawer.Screen name = "Orders" component={Orders} options= {{
         title: 'Orders',
         drawerIcon: ({focused}) => (
           <Ionicons name="ios-receipt-outline" size={25} color={focused ? '#7cc' : '#E88832'}/>
         )
       }}/>
-      <Drawer.Screen name = "Settings" component={LegalScreen} options= {{
+      <Drawer.Screen name = "Settings" component={Legal} options= {{
         title: 'Settings',
         drawerIcon: ({focused}) => (
           <Ionicons name="settings-outline" size={25} color={focused ? '#7cc' : '#E88832'}/>
         ),
       }}/>
-      <Drawer.Screen name = "Logout" component={LogoutScreen} options= {{
+      <Drawer.Screen name = "Logout" component={Logout} options= {{
         title: 'Logout',
         drawerIcon: ({focused}) => (
           <AntDesign name="logout" size={25} color={focused ? '#7cc' : '#E88832'} />
@@ -139,14 +140,14 @@ const Navigation = () => {
           />
         ) : (
           <>
-          <RootStack.Screen name = "Landing" component={LandingScreen} options={{
+          <RootStack.Screen name = "Landing" component={Landing} options={{
             animationTypeForReplace: 'pop',
             headerShown: false,
           }}
           />
           <RootStack.Screen name = "Login" options={{headerShown:false}}>
             {(props) => (
-              <LoginScreen {...props} onLogin={handleLogin}/>
+              <LoginCustomer {...props} onLogin={handleLogin}/>
             )}
           </RootStack.Screen>
           <RootStack.Screen name = "Signup" options={({navigation}) => ({
@@ -183,13 +184,13 @@ const Navigation = () => {
                 <AntDesign name='arrowleft' size={30} 
                 backgroundColor='#fff'
                 color='#333' outline='none'
-                onPress={() => navigation.navigate('Home')}
+                onPress={() => navigation.navigate('Home1')}
                 />
               </View>
             ),
           })}>
           {(props) => (
-            <HomeScreen {...props} onPress={() => navigation.navigate('Product')}/>
+            <HomeScreen {...props} onPress={() => navigation.navigate('ProductList')}/>
           )}
         </RootStack.Screen>
         <RootStack.Screen name = "MakitDetail" options={({navigation}) => ({
@@ -204,7 +205,7 @@ const Navigation = () => {
               <AntDesign name='arrowleft' size={30} 
               backgroundColor='#fff'
               color='#333' outline='none'
-              onPress={() => navigation.navigate('Product')}
+              onPress={() => navigation.navigate('ProductList')}
               />
             </View>
             ),

@@ -1,5 +1,20 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, FlatList } from 'react-native';
+
+import { CATEGORIES, MAKITS } from '../data/dummy-data';
+import MakitList from '../components/makit-list';
+
+const MakitDetail = props => {
+    const renderMakit = itemData => {
+    return(
+        <MakitList
+            title={itemData.item.title}
+        />
+        // <View style={styles.container}>
+        //     <Text>Stuff stuff</Text>
+        // </View>
+    )};
+};
 
 const styles = StyleSheet.create({
     container: {
@@ -9,12 +24,4 @@ const styles = StyleSheet.create({
     },
 });
 
-const MakitDetailScreen = () => {
-    return(
-        <View style={styles.container}>
-            <Text>what you like know about these makits boi</Text>
-        </View>
-    );
-};
-
-export default MakitDetailScreen;
+export default MakitDetail;

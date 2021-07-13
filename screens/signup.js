@@ -3,7 +3,7 @@ import { StyleSheet, ScrollView , Modal, Pressable, Text, View, Alert } from 're
 import FormInput from '../components/FormInput';
 import FormButton from '../components/FormButton';
 
-const SignupScreen = ({onSignup}) => {
+const Signup = ({onSignup}) => {
     const [fullname, setFullname] = useState("");
     const [email, setEmail] = useState("");
     const [contact, setContact] = useState("");
@@ -181,4 +181,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default SignupScreen;
+export default Signup;

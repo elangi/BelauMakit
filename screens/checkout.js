@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     },
 });
 
-const CheckoutScreen = () => {
+const Checkout = () => {
     return(
         <View style={styles.container}>
             <Text>This is my checkout and I shall buy whatever I want to buy boiiii</Text>
@@ -17,4 +17,4 @@ const CheckoutScreen = () => {
     );
 };
 
-export default CheckoutScreen;
+export default Checkout;

@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet, TouchableOpacity, Text, Platform, TouchableNativeFeedback} from 'react-native';
+import {View, StyleSheet, TouchableOpacity, Text, Image, FlatList, Platform, TouchableNativeFeedback} from 'react-native';
 
 const CategoryList = props => {
     let TouchableComp = TouchableOpacity;
@@ -13,7 +13,9 @@ const CategoryList = props => {
                 style={{flex:1}}
                 onPress={props.onSelect}>
                 <View style={{...styles.container}}>
+                    <Image style={styles.image} source={props.image} />
                     <Text style={styles.title} numberOfLines={8}>{props.title}</Text>
+                    <Text style={styles.idk} numberOfLines={2}>{props.location}</Text>
                 </View>
             </TouchableComp>
         </View>
